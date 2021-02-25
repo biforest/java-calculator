@@ -1,16 +1,18 @@
 package domain.calculator;
 
+import domain.expression.Expression;
+
 public class Calculator {
 
     public int calculate(String strExpression) {
-        String[] tokens = strExpression.split(" ");
+        Parser parser = new Parser(strExpression);
 
-        int left = Integer.parseInt(tokens[0]);
+        int left = Integer.parseInt(parser.nextToken());
         Expression expression = Expression.from(left);
 
-        for (int i = 1; i < tokens.length; i+=2) {
-            String operator = tokens[i];
-            int right = Integer.parseInt(tokens[i+1]);
+        while (parser.hasNext()) {
+            String operator = parser.nextToken();
+            int right = Integer.parseInt(parser.nextToken());
             expression = Expression.of(expression, right, operator);
         }
 
