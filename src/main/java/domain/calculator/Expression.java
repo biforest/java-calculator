@@ -21,6 +21,9 @@ public class Expression {
         int leftResult = left.evaluate();
         return new Expression(leftResult, right, Operator.from(operator));
     }
+    public static Expression from(int left) {
+        return of(left, 0, "+");
+    }
 
     public int evaluate() {
         return operator.operate(left, right);

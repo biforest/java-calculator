@@ -6,13 +6,13 @@ public class Calculator {
         String[] tokens = strExpression.split(" ");
 
         int left = Integer.parseInt(tokens[0]);
-        String operator = tokens[1];
-        int right = Integer.parseInt(tokens[2]);
-        Expression leftResult = Expression.of(left, right, operator);
+        Expression expression = Expression.from(left);
 
-        String operator2 = tokens[3];
-        int right2 = Integer.parseInt(tokens[4]);
-        Expression expression = Expression.of(leftResult, right2, operator2);
+        for (int i = 1; i < tokens.length; i+=2) {
+            String operator = tokens[i];
+            int right = Integer.parseInt(tokens[i+1]);
+            expression = Expression.of(expression, right, operator);
+        }
 
         return expression.evaluate();
     }
