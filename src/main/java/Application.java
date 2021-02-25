@@ -1,7 +1,8 @@
-package calculator;
-
 import java.util.List;
 import java.util.Scanner;
+
+import calculator.Calculator;
+import calculator.Operation;
 
 public class Application {
     public static void main(String[] args) {
