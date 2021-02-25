@@ -108,5 +108,8 @@ public class CalculatorTest {
 
         assertThatExceptionOfType(InvalidInputException.class)
                 .isThrownBy(() -> calculator.calculate("3 + 3 - 3 ###"));
+
+        assertThatExceptionOfType(InvalidInputException.class)
+                .isThrownBy(() -> calculator.calculate("3 + 3 3 2 - 2"));
     }
 }
