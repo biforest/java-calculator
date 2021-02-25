@@ -1,8 +1,10 @@
 import domain.calculator.Calculator;
+import domain.calculator.operator.exception.DivideByZeroException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class CalculatorTest {
 
@@ -54,5 +56,12 @@ public class CalculatorTest {
 
         int test3Result = calculator.calculate("22 / 6");
         assertThat(test3Result).isEqualTo(3);
+    }
+
+    @Test
+    void 나누기는_0으로_나눌때_DivideByZeroException_발생() {
+        assertThatExceptionOfType(DivideByZeroException.class)
+                .isThrownBy(() -> calculator.calculate("2 / 0"))
+                .as("0으로 나눌 수 없습니다.");
     }
 }
