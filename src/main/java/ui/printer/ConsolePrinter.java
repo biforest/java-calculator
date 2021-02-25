@@ -17,7 +17,7 @@ public class ConsolePrinter implements Printer {
 
     @Override
     public void printWaitingForInputText() {
-        System.out.println(INPUT_REQUEST_MESSAGE);
+        System.out.print(INPUT_REQUEST_MESSAGE);
     }
 
     @Override
