@@ -43,4 +43,16 @@ public class CalculatorTest {
         int test3Result = calculator.calculate("430 * 289");
         assertThat(test3Result).isEqualTo(124270);
     }
+
+    @Test
+    void 나누기_테스트() {
+        int test1Result = calculator.calculate("42 / 2");
+        assertThat(test1Result).isEqualTo(21);
+
+        int test2Result = calculator.calculate("60 / 5");
+        assertThat(test2Result).isEqualTo(12);
+
+        int test3Result = calculator.calculate("22 / 6");
+        assertThat(test3Result).isEqualTo(3);
+    }
 }
