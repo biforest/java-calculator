@@ -54,5 +54,11 @@ class OperationTest {
 
     @Test
     void splitOperation() {
+        String input = "2 + -3 * 4 / 2";
+
+        operation = new Operation(input);
+
+        assertThat(operation.getOperands()).isEqualTo(Arrays.asList(2, -3, 4, 2));
+        assertThat(operation.getOperators()).isEqualTo(Arrays.asList('+', '*', '/'));
     }
 }

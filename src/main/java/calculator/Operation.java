@@ -16,6 +16,7 @@ public class Operation {
     }
 
     public void validateOperation() {
+        validateOtherSymbols();
         validateFirstIndex();
         validateDuplicate();
     }
