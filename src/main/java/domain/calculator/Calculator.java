@@ -2,17 +2,14 @@ package domain.calculator;
 
 public class Calculator {
 
-    public int calculate(String expression) {
-        String[] splitedExpression = expression.split("\\+|-|\\*|/");
-        int left = Integer.parseInt(splitedExpression[0]);
-        int right = Integer.parseInt(splitedExpression[1]);
+    public int calculate(String strExpression) {
+        String[] tokens = strExpression.split(" ");
 
-        if (expression.contains("-")) {
-            return left - right;
-        } else if (expression.contains("*")) {
-            return left * right;
-        }
+        int left = Integer.parseInt(tokens[0]);
+        String operator = tokens[1];
+        int right = Integer.parseInt(tokens[2]);
 
-        return left + right;
+        Expression expression = Expression.of(left, right, operator);
+        return expression.evaluate();
     }
 }
