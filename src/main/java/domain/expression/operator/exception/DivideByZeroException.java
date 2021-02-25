@@ -7,4 +7,9 @@ public class DivideByZeroException extends RuntimeException {
     public DivideByZeroException(String message) {
         this.message = message;
     }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
 }
