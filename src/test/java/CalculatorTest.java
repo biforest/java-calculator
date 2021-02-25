@@ -1,5 +1,5 @@
 import domain.calculator.Calculator;
-import domain.calculator.operator.exception.DivideByZeroException;
+import domain.expression.operator.exception.DivideByZeroException;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -87,4 +87,5 @@ public class CalculatorTest {
         int test3Result = calculator.calculate("54 * 20 / 3 / 120 + 2 - 5");
         assertThat(test3Result).isEqualTo(0);
     }
+
 }

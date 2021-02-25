@@ -1,6 +1,6 @@
-package domain.calculator;
+package domain.expression;
 
-import domain.calculator.operator.Operator;
+import domain.expression.operator.Operator;
 
 public class Expression {
 

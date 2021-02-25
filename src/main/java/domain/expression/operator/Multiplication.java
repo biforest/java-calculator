@@ -1,4 +1,4 @@
-package domain.calculator.operator;
+package domain.expression.operator;
 
 public class Multiplication extends Operator {
 

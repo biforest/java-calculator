@@ -1,6 +1,6 @@
-package domain.calculator.operator;
+package domain.expression.operator;
 
-import domain.calculator.operator.exception.DivideByZeroException;
+import domain.expression.operator.exception.DivideByZeroException;
 
 public class Division extends Operator {
 

@@ -1,4 +1,4 @@
-package domain.calculator.operator.exception;
+package domain.expression.operator.exception;
 
 public class DivideByZeroException extends RuntimeException {
 
