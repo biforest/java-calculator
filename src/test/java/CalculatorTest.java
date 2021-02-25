@@ -64,4 +64,16 @@ public class CalculatorTest {
                 .isThrownBy(() -> calculator.calculate("2 / 0"))
                 .as("0으로 나눌 수 없습니다.");
     }
+
+    @Test
+    void 두개의_연산자가_존재하는_식을_계산할_수_있다() {
+        int test1Result = calculator.calculate("44 + 23 - 3");
+        assertThat(test1Result).isEqualTo(64);
+
+        int test2Result = calculator.calculate("4 / 2 - 10");
+        assertThat(test2Result).isEqualTo(-8);
+
+        int test3Result = calculator.calculate("54 * 20 / 3");
+        assertThat(test3Result).isEqualTo(360);
+    }
 }
