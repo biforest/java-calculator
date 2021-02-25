@@ -88,4 +88,13 @@ public class CalculatorTest {
         assertThat(test3Result).isEqualTo(0);
     }
 
+    @Test
+    void 정상적이지_않은_공백_입력에_대해서도_올바른_답을_낼_수_있다() {
+        int test1Result = calculator.calculate(" 21 + 2  ");
+        assertThat(test1Result).isEqualTo(23);
+
+        int test2Result = calculator.calculate("23                - 2 /3");
+        assertThat(test2Result).isEqualTo(7);
+
+    }
 }
