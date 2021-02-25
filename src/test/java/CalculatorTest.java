@@ -93,8 +93,19 @@ public class CalculatorTest {
         int test1Result = calculator.calculate(" 21 + 2  ");
         assertThat(test1Result).isEqualTo(23);
 
-        int test2Result = calculator.calculate("23                - 2 /3");
+        int test2Result = calculator.calculate("23                - 2 /   3");
         assertThat(test2Result).isEqualTo(7);
+    }
 
+    @Test
+    void 정상적이지_않은_입력에_대해_InvalidInputException을_던진다() {
+        assertThatExceptionOfType(InvalidInputException.class)
+                .isThrownBy(() -> calculator.calculate("2 + // 3"));
+
+        assertThatExceptionOfType(InvalidInputException.class)
+                .isThrownBy(() -> calculator.calculate("abc efij 2 + 3"));
+
+        assertThatExceptionOfType(InvalidInputException.class)
+                .isThrownBy(() -> calculator.calculate("3 + 3 - 3 ###"));
     }
 }
