@@ -1,9 +1,9 @@
 package domain.calculator;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import domain.calculator.exception.InvalidInputException;
+
+import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Parser {
@@ -14,6 +14,7 @@ public class Parser {
         tokenQueue = new LinkedList<>();
 
         List<String> tokenList = splitExpressionToList(expression);
+        validateTokenList(tokenList);
         tokenQueue.addAll(tokenList);
     }
 
@@ -26,6 +27,23 @@ public class Parser {
         return Arrays.stream(tokens)
                 .filter(token -> !token.equals(""))
                 .collect(Collectors.toList());
+    }
+
+    private void validateTokenList(List<String> tokenList) {
+        long invalidTokenCount = tokenList.stream()
+                .filter(token -> !isNumber(token) && !isOperator(token))
+                .count();
+
+        if (invalidTokenCount > 0) {
+            throw new InvalidInputException("올바르지 않은 입력입니다.");
+        }
+    }
+
+    private boolean isNumber(String token) {
+        return Pattern.matches("^[0-9]+$", token);
+    }
+    private boolean isOperator(String token) {
+        return Pattern.matches("\\+|-|\\*|/", token);
     }
 
     public String nextToken() {

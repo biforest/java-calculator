@@ -1,4 +1,5 @@
 import domain.calculator.Calculator;
+import domain.calculator.exception.InvalidInputException;
 import domain.expression.operator.exception.DivideByZeroException;
 import org.junit.jupiter.api.Test;
 
