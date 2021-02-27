@@ -43,12 +43,15 @@ public class ExpressionValidator {
     private boolean hasNotAnyToken(List<String> tokenList) {
         return (tokenList.size() == 0);
     }
+
     private boolean isNumber(String token) {
         return Pattern.matches("^[0-9]+$", token);
     }
+
     private boolean isOperator(String token) {
         return Pattern.matches("\\+|-|\\*|/", token);
     }
+
     private boolean isNotLastOperation(int index, int tokenListSize) {
         return (index + 1 < tokenListSize);
     }

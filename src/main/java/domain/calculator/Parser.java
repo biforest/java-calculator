@@ -31,6 +31,7 @@ public class Parser {
     public String nextToken() {
         return tokenQueue.poll();
     }
+
     public boolean hasNext() {
         return !tokenQueue.isEmpty();
     }
