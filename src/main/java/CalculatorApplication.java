@@ -12,9 +12,9 @@ public class CalculatorApplication {
     private static final boolean CONTINUE_PROGRAM = true;
     private static final String EXIT_REQUEST = "exit";
 
-    private Printer printer;
-    private Receiver receiver;
-    private Calculator calculator;
+    private final Printer printer;
+    private final Receiver receiver;
+    private final Calculator calculator;
 
     public CalculatorApplication() {
         printer = new ConsolePrinter();
