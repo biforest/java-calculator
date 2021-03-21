@@ -43,18 +43,14 @@ public class CalculatorApplication {
     }
 
     private Optional<Integer> calculateExpression(String expression) {
-        Integer result;
         try {
+            int result;
             result = calculator.calculate(expression);
-        } catch (DivideByZeroException e) {
-            System.out.println(e.getMessage());
-            return Optional.empty();
-        } catch (InvalidInputException e) {
+            return Optional.of(result);
+        } catch (DivideByZeroException | InvalidInputException e) {
             System.out.println(e.getMessage());
             return Optional.empty();
         }
-
-        return Optional.of(result);
     }
 
     public static void main(String[] args) {
