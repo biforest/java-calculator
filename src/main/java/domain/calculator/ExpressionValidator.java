@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class ExpressionValidator {
 
-    private static final int HEAD_TOKEN_INDEX = 1;
+    private static final int HEAD_TOKEN_INDEX = 0;
     private static final int FIRST_OPERATOR_INDEX = 1;
     private static final int NEXT_OPERATOR_STEP = 2;
 
